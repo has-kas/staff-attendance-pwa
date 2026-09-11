@@ -1,0 +1,58 @@
+
+:root{
+  --green:#176f47;
+  --green-dark:#0f5d3a;
+  --green-soft:#e8f4ed;
+  --bg:#f3f7f5;
+  --card:#fff;
+  --text:#163029;
+  --muted:#6b7d75;
+  --line:#dce7e1;
+  --danger:#c62828;
+  --warn:#d28a1f;
+  --shadow:0 8px 24px rgba(18,72,48,.10);
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text)}
+button,input{font:inherit}
+button{cursor:pointer}
+.topbar{background:var(--green);color:#fff;padding:16px 18px;display:flex;gap:12px;align-items:center;box-shadow:0 3px 12px rgba(0,0,0,.12)}
+.brand{flex:1;min-width:0}
+.brand h1{font-size:20px;margin:0 0 4px}
+.brand small{opacity:.9}
+.pills{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+.pill{background:rgba(255,255,255,.16);padding:7px 10px;border-radius:20px;font-size:12px;font-weight:700}
+.pill.offline{background:#7f1d1d}
+.pill.pending{background:#8a5a09}
+.wrap{max-width:1180px;margin:auto;padding:20px}
+.grid{display:grid;grid-template-columns:360px 1fr;gap:18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);padding:18px}
+h2,h3{color:var(--green);margin-top:0}
+.search{width:100%;padding:13px;border:1px solid var(--line);border-radius:12px;margin-bottom:12px}
+.staff-list{display:flex;flex-direction:column;gap:8px;max-height:60vh;overflow:auto}
+.staff-item{border:1px solid var(--line);background:#fff;border-radius:12px;padding:12px;text-align:left}
+.staff-item.selected{background:var(--green-soft);border-color:#91c7aa}
+.staff-item strong{display:block;margin-bottom:4px}
+.muted{color:var(--muted)}
+.info-grid{display:grid;grid-template-columns:140px 1fr;gap:7px 12px;margin-bottom:18px}
+.att-box{background:#f5f8f6;border-radius:14px;padding:16px;margin:16px 0}
+.status-late{color:var(--danger);font-weight:800}
+.actions{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.btn{border:0;border-radius:12px;padding:14px 18px;font-weight:800}
+.btn-in{background:#1b8f4f;color:#fff}
+.btn-out{background:#bf4b28;color:#fff}
+.btn:disabled{opacity:.35;cursor:not-allowed}
+.notice{margin-bottom:16px;padding:12px 14px;border-radius:12px;display:none}
+.notice.show{display:block}
+.notice.ok{background:#e8f4ed;color:#145c38}
+.notice.warn{background:#fff5dc;color:#795100}
+.notice.err{background:#fdecec;color:#9f1f1f}
+.queue{margin-top:18px}
+.queue-row{padding:10px 0;border-top:1px solid var(--line);font-size:13px}
+.footer{margin-top:20px;color:var(--muted);font-size:12px;text-align:center}
+@media(max-width:800px){
+  .grid{grid-template-columns:1fr}
+  .topbar{align-items:flex-start;flex-direction:column}
+  .pills{justify-content:flex-start}
+  .staff-list{max-height:300px}
+}

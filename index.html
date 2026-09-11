@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#176f47">
+  <title>Offline Staff Attendance</title>
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" href="./icon-192.png">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <h1 id="institutionName">Staff Attendance</h1>
+      <small id="orgUnit">Offline Attendance Console</small>
+    </div>
+    <div class="pills">
+      <span id="connBadge" class="pill">● ONLINE</span>
+      <span id="pendingBadge" class="pill">0 pending</span>
+      <span id="officialHours" class="pill">Official: --:-- - --:--</span>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div id="notice" class="notice"></div>
+
+    <div class="grid">
+      <section class="card">
+        <h3>Find Staff</h3>
+        <input id="search" class="search" placeholder="Search Staff ID, name or department">
+        <div id="staffList" class="staff-list"></div>
+      </section>
+
+      <section class="card">
+        <div id="selectedPanel">
+          <div class="muted">Select a staff member.</div>
+        </div>
+      </section>
+    </div>
+
+    <section class="card queue">
+      <h3>Pending Offline Records</h3>
+      <div id="queueList"></div>
+    </section>
+
+    <div class="footer">
+      Offline-first attendance shell. Keep this device secured and use one administrator device where possible.
+    </div>
+  </main>
+
+  <script src="./config.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>
